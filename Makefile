@@ -11,7 +11,7 @@ SERAPI_COQ_HOME ?=
 # SERAPI_COQ_HOME=/home/egallego/external/coq-v8.8/
 # SERAPI_COQ_HOME=/home/egallego/research/jscoq/coq-external/coq-v8.7+32bit/
 
-all: sertop sercomp
+all: sertop sercomp compser
 
 TARGET=native
 
@@ -39,6 +39,11 @@ sercomp: sertop
 	OCAMLFIND_IGNORE_DUPS_IN=$(OPAMPATH)/ocaml/compiler-libs/ \
 	OCAMLPATH=$(SERAPI_COQ_HOME):$(OCAMLPATH)                 \
 	$(OCB) $(OCB_OPT) $(INCLUDETOP) sertop/sercomp.$(TARGET)
+
+compser: sertop
+	OCAMLFIND_IGNORE_DUPS_IN=$(OPAMPATH)/ocaml/compiler-libs/ \
+	OCAMLPATH=$(SERAPI_COQ_HOME):$(OCAMLPATH)                 \
+	$(OCB) $(OCB_OPT) $(INCLUDETOP) sertop/compser.$(TARGET)
 
 
 #####################################################

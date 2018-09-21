@@ -55,6 +55,9 @@ true: warn(+1..49-4-44-45), warn_error(+1..49-42), bin_annot, annot, debug
 <sertop/sercomp.ml>: package(cmdliner)
 <sertop/sercomp.{byte,native}>: linkall, package(cmdliner,num,ppx_sexp_conv.runtime-lib,coq.plugins.ssreflect)
 
+<sertop/compser.ml>: package(cmdliner)
+<sertop/compser.{byte,native}>: linkall, package(cmdliner,num,ppx_sexp_conv.runtime-lib,coq.plugins.ssreflect)
+
 # JsCoq helpers
 <jscoq/coq-js>: include
 <jscoq/coq-js/*.{ml,mli}>: package(yojson)
